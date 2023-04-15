@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+</head>
+
+<body>
+    <main>
+        <div class="card">
+          <div class="top mobile-only">
+            <img class="mobile" src="hero-mobile.jpg" alt="girlPic">
+        </div>
+            <div class="left">
+
+                <div class="logo">
+                    <div class="l1">
+                        <img src="logo.svg" alt="logo">
+                    </div>
+
+                    <h1 class="we">WE'RE</h1>
+                    <h1 class="coming">COMING <br> SOON</h1>
+
+                    <p class="text"> Hello fellow shoppers! We're currently building our new<br> fashion store.
+                        Add your email below to stay up-to-date with<br> announcements and our launch deals.</p>
+
+                        <div class="two">
+                            <label for="email"></label>
+                            <input class="inp" type="email" id="email" pattern=".+@globex\.com" size="30" required placeholder="Email">
+                            <button class="btn-submit" id="submit"><img src="icon-arrow.svg" alt=""></button>
+                            
+                          </div>
+                          <div class="signS">
+                            <div class="sign" id="valid-msg" style="display:none">
+                              <div class="error inv">
+                                <img src="images/icon-valid.svg" alt="" />
+                              </div>
+                              <div class="validation">
+                                <p>Email is valid</p>
+                              </div>
+                            </div>
+                          <div class="sign" id="error-msg" style="display:none">
+                            <div class="error inv">
+                              <img src="images/icon-error.svg" alt="" />
+                            </div>
+                            <div class="validation">
+                              <p>Please provide a valid email</p>
+                            </div>
+                          </div>
+                          
+                        </div>
+                          
+                          <script>
+                            // Select the button element
+                            const button = document.querySelector('#submit');
+                            // Select the error message element
+                            const errorMsg = document.querySelector('#error-msg');
+                            // Select the valid message element
+                            const validMsg = document.querySelector('#valid-msg');
+                          
+                            // Add a click event listener to the button
+                            button.addEventListener('click', () => {
+                              // Select the email input element
+                              const emailInput = document.querySelector('#email');
+                              // Get the value of the email input
+                              const email = emailInput.value;
+                              // Define a regex pattern for a valid email format
+                              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                              // Check if the email matches the regex pattern
+                              if (emailRegex.test(email)) {
+                                // Email is valid, show the valid message and hide the error message
+                                validMsg.style.display = 'flex';
+                                errorMsg.style.display = 'none';
+                              } else {
+                                // Email is invalid, show the error message and hide the valid message
+                                errorMsg.style.display = 'flex';
+                                validMsg.style.display = 'none';
+                              }
+                            });
+                          </script>
+                </div>
+            </div>
+            <div class="right desktop-only">
+                <img class="hero" src="hero-desktop.jpg" alt="girlPic">
+
+            </div>
+        </div>
+        <div class="kudzuya">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://github.com/Kudzuya" target="_blank">Kudzuya | @Kudzuya</a>
+        </div>
+    </main>
+</body>
+
+</html>
